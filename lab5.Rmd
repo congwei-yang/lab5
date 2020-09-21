@@ -143,7 +143,7 @@ matrix with the second column being only the month abbreviations and the
 third column being the years.
 
 ```{r}
-str_match(x, pattern = "(\\w{3}) (\\d+)")
+str_match(x, pattern = "(\\w{3}) (\\d.+)")
 ```
 
 Find a pattern to completely match all the dates with the full date as a capture
