@@ -167,7 +167,7 @@ result should have a value of `NA` for the last component.
 
 ```{r}
 x <- c("3.14", "100", "-259.11", "2.3e3", "1,112", "720p")
-str_match(x, pattern = "")[, 1]
+str_match(x, pattern = ".*[^p]$")[, 1]
 ```
 
 Find a pattern so all the image files (`.jpg` and `.png`) are extracted with
@@ -177,7 +177,7 @@ their name and file extensions as capture groups. Your result should be an
 ```{r}
 x <- c(".gitignore", "img-01.png", "vis.jpg", ".Rhistory", "lab5.R",
        "update_vis.jpg", "lab5.html", "png.pdf")
-str_match(x, pattern = "")
+str_match(x, pattern = ".+\\.\\w{2}[^f]$")
 ```
 
 Find a pattern to completely match all the phone numbers.
@@ -185,6 +185,6 @@ Find a pattern to completely match all the phone numbers.
 ```{r}
 x <- c("423-114-4432", "572-525-2532", "(322)523-1000", "401 342 1983",
        "3781340100", "1 800 432 1341")
-str_match(x, pattern = "")
+str_match(x, pattern = ".*\\d{3}.*\\d{3}.*\\d{4}")
 ```
 
